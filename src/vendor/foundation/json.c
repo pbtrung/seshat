@@ -339,7 +339,7 @@ static size_t parse_value(const char *buffer, size_t length, size_t pos,
             }
             if (!simple)
                 return STRING_NPOS;
-        // Fall through to string handling
+            // fall through
 
         case '"':
         default:

@@ -134,33 +134,46 @@ hash_t hash(const void *key, size_t len) {
     switch (len & 15) { /*lint -save -e616 -e825 -e744 */
     case 15:
         k2 ^= ((uint64_t)tail[14]) << 48;
+        // fall through
     case 14:
         k2 ^= ((uint64_t)tail[13]) << 40;
+        // fall through
     case 13:
         k2 ^= ((uint64_t)tail[12]) << 32;
+        // fall through
     case 12:
         k2 ^= ((uint64_t)tail[11]) << 24;
+        // fall through
     case 11:
         k2 ^= ((uint64_t)tail[10]) << 16;
+        // fall through
     case 10:
         k2 ^= ((uint64_t)tail[9]) << 8;
+        // fall through
     case 9:
         k2 ^= ((uint64_t)tail[8]);
-
+        // fall through
     case 8:
         k1 ^= ((uint64_t)tail[7]) << 56;
+        // fall through
     case 7:
         k1 ^= ((uint64_t)tail[6]) << 48;
+        // fall through
     case 6:
         k1 ^= ((uint64_t)tail[5]) << 40;
+        // fall through
     case 5:
         k1 ^= ((uint64_t)tail[4]) << 32;
+        // fall through
     case 4:
         k1 ^= ((uint64_t)tail[3]) << 24;
+        // fall through
     case 3:
         k1 ^= ((uint64_t)tail[2]) << 16;
+        // fall through
     case 2:
         k1 ^= ((uint64_t)tail[1]) << 8;
+        // fall through
     case 1:
         k1 ^= ((uint64_t)tail[0]);
         bmix64(h1, h2, k1, k2, c1, c2);

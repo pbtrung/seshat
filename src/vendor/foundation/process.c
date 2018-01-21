@@ -31,7 +31,7 @@
 
 static int _process_exit_code;
 
-process_t *process_allocate() {
+process_t *process_allocate(void) {
     process_t *proc =
         memory_allocate(0, sizeof(process_t), 0, MEMORY_PERSISTENT);
     process_initialize(proc);
