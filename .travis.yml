@@ -82,5 +82,4 @@ matrix:
             
 script:
   - export CC="$C_COMPILER"
-  - export PATH=$PATH:~/.local/bin
   - ./travis.sh
