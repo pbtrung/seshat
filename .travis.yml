@@ -19,8 +19,22 @@ matrix:
               key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
           packages:
-            - gcc-6
+            - gcc-7
             - clang-4.0
+            - curl
+    - os: linux
+      compiler: clang-5.0
+      env: C_COMPILER="clang-5.0"
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main"
+              key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-7
+            - clang-5.0
             - curl
     - os: linux
       compiler: gcc-5
@@ -43,6 +57,17 @@ matrix:
             - ubuntu-toolchain-r-test
           packages:
             - gcc-6
+            - curl
+    - os: linux
+      compiler: gcc-7
+      env: C_COMPILER="gcc-7"
+      addons:
+        apt:
+          sources:
+            - sourceline: 'ppa:jonathonf/curl'
+            - ubuntu-toolchain-r-test
+          packages:
+            - gcc-7
             - curl
             
 script:

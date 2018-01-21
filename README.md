@@ -1,1 +1,1 @@
-# seshat ![Alt License](https://dl.dropboxusercontent.com/s/cul64jahsd3cg14/license.svg?dl=0)
+# seshat ![Alt License](https://dl.dropboxusercontent.com/s/cul64jahsd3cg14/license.svg?dl=0) [![Build Status](https://travis-ci.org/pbtrung/seshat.svg?branch=master)](https://travis-ci.org/pbtrung/seshat)
