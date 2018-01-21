@@ -64,6 +64,7 @@ misc_sources = files('''
     skein3fish/threefish512Block.c
     skein3fish/threefishApi.c
     zbase32/zbase32.c
+    rabin/rabin.c
 '''.split())
 
 libvendor_sources = libfoundation_sources + misc_sources
