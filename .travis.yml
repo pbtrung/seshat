@@ -14,6 +14,7 @@ matrix:
       addons:
         apt:
           sources:
+            - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
             - sourceline: "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-4.0 main"
               key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
@@ -22,12 +23,14 @@ matrix:
             - gcc-7
             - clang-4.0
             - curl
+            - python3.6
     - os: linux
       compiler: clang-5.0
       env: C_COMPILER="clang-5.0"
       addons:
         apt:
           sources:
+            - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
             - sourceline: "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main"
               key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
@@ -36,39 +39,48 @@ matrix:
             - gcc-7
             - clang-5.0
             - curl
+            - python3.6
     - os: linux
       compiler: gcc-5
       env: C_COMPILER="gcc-5"
       addons:
         apt:
           sources:
+            - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-5
             - curl
+            - python3.6
     - os: linux
       compiler: gcc-6
       env: C_COMPILER="gcc-6"
       addons:
         apt:
           sources:
+            - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-6
             - curl
+            - python3.6
     - os: linux
       compiler: gcc-7
       env: C_COMPILER="gcc-7"
       addons:
         apt:
           sources:
+            - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-7
             - curl
+            - python3.6
             
 script:
   - export CC="$C_COMPILER"
+  - export PATH=$PATH:~/.local/bin
+  - ./travis.sh
