@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 dist: trusty
 
 notifications:
@@ -16,6 +16,7 @@ matrix:
           sources:
             - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: 'ppa:jonathonf/backports'
             - sourceline: "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-4.0 main"
               key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
@@ -24,6 +25,7 @@ matrix:
             - clang-4.0
             - curl
             - python3.6
+            - sqlite3
     - os: linux
       compiler: clang-5.0
       env: C_COMPILER="clang-5.0"
@@ -32,6 +34,7 @@ matrix:
           sources:
             - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: 'ppa:jonathonf/backports'
             - sourceline: "deb http://apt.llvm.org/trusty/ llvm-toolchain-trusty-5.0 main"
               key_url:    "http://apt.llvm.org/llvm-snapshot.gpg.key"
             - ubuntu-toolchain-r-test
@@ -40,6 +43,7 @@ matrix:
             - clang-5.0
             - curl
             - python3.6
+            - sqlite3
     - os: linux
       compiler: gcc-5
       env: C_COMPILER="gcc-5"
@@ -48,11 +52,13 @@ matrix:
           sources:
             - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: 'ppa:jonathonf/backports'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-5
             - curl
             - python3.6
+            - sqlite3
     - os: linux
       compiler: gcc-6
       env: C_COMPILER="gcc-6"
@@ -61,11 +67,13 @@ matrix:
           sources:
             - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: 'ppa:jonathonf/backports'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-6
             - curl
             - python3.6
+            - sqlite3
     - os: linux
       compiler: gcc-7
       env: C_COMPILER="gcc-7"
@@ -74,11 +82,13 @@ matrix:
           sources:
             - deadsnakes
             - sourceline: 'ppa:jonathonf/curl'
+            - sourceline: 'ppa:jonathonf/backports'
             - ubuntu-toolchain-r-test
           packages:
             - gcc-7
             - curl
             - python3.6
+            - sqlite3
             
 script:
   - export CC="$C_COMPILER"
