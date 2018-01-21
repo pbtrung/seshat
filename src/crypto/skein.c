@@ -12,7 +12,7 @@ rc_t skein_hash(const unsigned char *input, size_t in_len,
 
     SkeinCtx_t *skein_x = memory_allocate(0, sizeof(SkeinCtx_t), 0, 0);
     if (skein_x == NULL) {
-        rc = SESHAT_OUT_OF_MEMORY;
+        rc = SESHAT_OUT_OF_MEMORY_ERR;
         log_rc_msg("skein_hash::memory_allocate", rc);
         goto exit;
     }
@@ -61,7 +61,7 @@ rc_t skein_mac(const unsigned char *skein_mac_key, const unsigned char *input,
 
     SkeinCtx_t *skein_x = memory_allocate(0, sizeof(SkeinCtx_t), 0, 0);
     if (skein_x == NULL) {
-        rc = SESHAT_OUT_OF_MEMORY;
+        rc = SESHAT_OUT_OF_MEMORY_ERR;
         log_rc_msg("skein_mac::memory_allocate", rc);
         goto exit;
     }

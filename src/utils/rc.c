@@ -5,8 +5,8 @@ const char *rc_msg(rc_t rc) {
     switch (rc) {
     case SESHAT_SUCCESS:
         return "SESHAT_SUCCESS";
-    case SESHAT_OUT_OF_MEMORY:
-        return "SESHAT_OUT_OF_MEMORY";
+    case SESHAT_OUT_OF_MEMORY_ERR:
+        return "SESHAT_OUT_OF_MEMORY_ERR";
     case SESHAT_SKEIN_ERR:
         return "SESHAT_SKEIN_ERR";
     case SESHAT_SODIUM_ERR:

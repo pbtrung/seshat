@@ -45,7 +45,7 @@ rc_t ctr_encrypt(ctr_ctx_t *ctr_x, unsigned char *input, size_t in_len,
         memory_allocate(0, CTR_COUNTER_LEN * sizeof(unsigned char), 0,
                         MEMORY_TEMPORARY | MEMORY_ZERO_INITIALIZED);
     if (counter == NULL) {
-        rc = SESHAT_OUT_OF_MEMORY;
+        rc = SESHAT_OUT_OF_MEMORY_ERR;
         log_rc_msg("ctr_encrypt::memory_allocate", rc);
         goto clean_1;
     }
@@ -53,7 +53,7 @@ rc_t ctr_encrypt(ctr_ctx_t *ctr_x, unsigned char *input, size_t in_len,
     unsigned char *t3f_buf = memory_allocate(
         0, THREEFISH_BLOCK_LEN * sizeof(unsigned char), 0, MEMORY_TEMPORARY);
     if (t3f_buf == NULL) {
-        rc = SESHAT_OUT_OF_MEMORY;
+        rc = SESHAT_OUT_OF_MEMORY_ERR;
         log_rc_msg("ctr_encrypt::memory_allocate", rc);
         goto clean_2;
     }
@@ -61,7 +61,7 @@ rc_t ctr_encrypt(ctr_ctx_t *ctr_x, unsigned char *input, size_t in_len,
     unsigned char *ctr_iv_counter = memory_allocate(
         0, THREEFISH_BLOCK_LEN * sizeof(unsigned char), 0, MEMORY_TEMPORARY);
     if (ctr_iv_counter == NULL) {
-        rc = SESHAT_OUT_OF_MEMORY;
+        rc = SESHAT_OUT_OF_MEMORY_ERR;
         log_rc_msg("ctr_encrypt::memory_allocate", rc);
         goto clean_3;
     }

@@ -3,7 +3,7 @@
 
 enum rc_t {
     SESHAT_SUCCESS = 0,
-    SESHAT_OUT_OF_MEMORY = -1,
+    SESHAT_OUT_OF_MEMORY_ERR = -1,
     SESHAT_SKEIN_ERR = -2,
     SESHAT_SODIUM_ERR = -3,
     SESHAT_ARGON2_ERR = -4,

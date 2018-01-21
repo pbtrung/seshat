@@ -146,7 +146,7 @@ rabin_t *rabin_init(void) {
 
     rabin_t *h = memory_allocate(0, sizeof(rabin_t), 0, MEMORY_PERSISTENT);
     if (h == NULL) {
-        log_rc_msg("rabin_init::memory_allocate", SESHAT_OUT_OF_MEMORY);
+        log_rc_msg("rabin_init::memory_allocate", SESHAT_OUT_OF_MEMORY_ERR);
     }
 
     rabin_reset(h);
