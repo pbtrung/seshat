@@ -93,3 +93,4 @@ matrix:
 script:
   - export CC="$C_COMPILER"
   - ./travis.sh
+  - ./build.sh
